@@ -39,3 +39,28 @@ y = glass_df['GlassType']
 
 # Spliting the data into training and testing sets.
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.3, random_state = 42)
+@st.cache()
+def prediction(model,ri,na,mg,al,si,k,ca,ba,fe):
+    glass_type = model.predict([[ri,na,mg,al,si,k,ca,ba,fe]])
+    glass_type = glass_type[0]
+    if glass_type == 1:
+        return "building windows float processed".upper()
+    else if glass_type == 2:
+        return "building windows non float processed".upper()
+    else if glass_type == 3:
+        return "vehicle windows float processed".upper()
+    else if glass_type == 4:
+        return "vehicle windows non float processed".upper()
+    else if glass_type == 5:
+        return "containers".upper()
+    else if glass_type == 6:
+        return "tableware".upper()
+    else:
+        return "headlamp".upper()
+st.title("Glass Type Predictor")
+st.sidebar.title("Exploratory Data Analysis")
+
+
+
+
+
