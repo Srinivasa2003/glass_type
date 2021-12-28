@@ -45,15 +45,15 @@ def prediction(model,ri,na,mg,al,si,k,ca,ba,fe):
     glass_type = glass_type[0]
     if glass_type == 1:
         return "building windows float processed".upper()
-    else if glass_type == 2:
+    elif glass_type == 2:
         return "building windows non float processed".upper()
-    else if glass_type == 3:
+    elif glass_type == 3:
         return "vehicle windows float processed".upper()
-    else if glass_type == 4:
+    elif glass_type == 4:
         return "vehicle windows non float processed".upper()
-    else if glass_type == 5:
+    elif glass_type == 5:
         return "containers".upper()
-    else if glass_type == 6:
+    elif glass_type == 6:
         return "tableware".upper()
     else:
         return "headlamp".upper()
